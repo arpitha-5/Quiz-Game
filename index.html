@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Game with Authentication</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Authentication Container (shown by default) -->
+  <div class="auth-container" id="login-container">
+    <h1>Welcome to Quiz Game</h1>
+    <form class="auth-form" id="login-form">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" required>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required>
+      </div>
+      <button type="submit" class="auth-btn">Login</button>
+      <div class="error-message" id="login-error"></div>
+      <div class="toggle-auth">
+        Don't have an account? <a href="#" id="show-signup">Sign up</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="auth-container" id="signup-container" style="display: none;">
+    <h1>Create Account</h1>
+    <form class="auth-form" id="signup-form">
+      <div class="form-group">
+        <label for="signup-name">Name</label>
+        <input type="text" id="signup-name" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-confirm">Confirm Password</label>
+        <input type="password" id="signup-confirm" required>
+      </div>
+      <button type="submit" class="auth-btn">Sign Up</button>
+      <div class="error-message" id="signup-error"></div>
+      <div class="toggle-auth">
+        Already have an account? <a href="#" id="show-login">Login</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Quiz Container (hidden by default) -->
+  <div class="quiz-container" id="quiz-container">
+    <div class="user-info">
+      Welcome, <span id="username-display"></span>
+      <button class="logout-btn" id="logout-btn">Logout</button>
+    </div>
+    <h1>Quiz Game</h1>
+    <div id="timer">Time Left: 15s</div>
+    <div id="question">Loading...</div>
+    <div id="options"></div>
+    <div class="control-buttons">
+      <button id="skip-btn" class="btn">Skip</button>
+      <button id="next-btn" class="btn">Next</button>
+    </div>
+    <div id="score">Score: 0</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
